@@ -1,6 +1,6 @@
 # django-graphene-react-starter
 
-Simple hackathon starter with Django, Graphene, React, and Bulma (Bloomer components). Still working on making this page comprehensive so it's as helpful as possible for rapid development during a hackathon.
+Simple hackathon starter with Django, Graphene, React, and Ant Design. Back end will expose a GraphQL API. Routing and views will be handled on the front end. Still working on making this page comprehensive so it's as helpful as possible for rapid development during a hackathon.
 
 #### Rationale behind choice of technologies
 
@@ -12,7 +12,7 @@ Well-documented, popular, easy to pick up, easy to find answers to questions. Th
 * [GraphQL?](https://www.howtographql.com/basics/0-introduction/)
 * Graphene is "a framework for building GraphQL APIs in Python."
 * [Here](https://reactjs.org/tutorial/tutorial.html) you can find an intro to React.
-* [Bulma documentation](https://bulma.io/documentation/) and [Bloomer documentation](https://bloomer.js.org/#/documentation/overview/start)
+* [Ant Design documentation](https://ant.design/docs/react/introduce)
 
 ## Back end
 
@@ -59,7 +59,7 @@ python manage.py loaddata ingredients
 python manage.py runserver
 ```
 
-7. Go to `localhost:8000/graphql` and test sample queries (copied from tutorial pages)
+7. Go to `localhost:8000/graphql` and test sample queries (copied from tutorial pages). 
 
 List all ingredients
 
@@ -114,9 +114,38 @@ query {
 ```
 
 #### Mutations
-*to do* 
 
-##### Adding an application
+Create a category
+```
+mutation {
+    createCategory(input: {name: "My Category"}) {
+        category {
+            name
+        }
+    }
+}
+```
+
+Create an ingredient
+
+```
+mutation {
+    createIngredient(input: {
+        name: "Milk",
+        notes: "fat free",
+        category: "Dairy"
+    }) {
+        ingredient {
+            name
+            notes
+        }
+    }
+}
+```
+
+*to do* update, delete
+
+#### Adding an application
 
 ```
 python manage.py startapp app_name
@@ -148,15 +177,24 @@ Django-filter is installed. You can read about filtering on the [Graphene docume
 *to do*
 [Documentation here](https://docs.djangoproject.com/en/2.0/ref/forms/validation/). On the [Graphene side](http://docs.graphene-python.org/projects/django/en/latest/form-mutations/).
 
-## Front end
+#### Tests
+*to do*
 
+---
+
+## Front end
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+#### How does the front end communicate with the back end?
+*to do* 
 
 #### What goes where
 *to do*
 
-* Layouts/
-* Components/ 
+* `layouts/` - for page structure templates
+* `components/` - for components
+* `pages/` - for pages
+* `utils/` - for extra settings and configurations
 
 #### Getting started
 *to do*
@@ -166,3 +204,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 cd frontend
 npm install
 ```
+
+#### How to add a component
+*to do*
+
+#### Styling
+*to do*
+Need to explore what people favor... styled components? External Less/Sass? Plain CSS files?
+
+###### Typography
+*to do*
+This project uses [Typography.js](https://kyleamathews.github.io/typography.js/). You can find the config in `frontend/utils/typography.js`.
+
+---
+
+## Deploy
+
+Debug false, whitenoise, etc.
+
+#### Heroku
+
+#### AWS

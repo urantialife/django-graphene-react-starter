@@ -10,7 +10,7 @@ class Query(cookbook.users.schema.Query, cookbook.ingredients.schema.Query, grap
     # as we begin to add more apps to our project
     pass
 
-class Mutation(cookbook.users.schema.Mutation):
+class Mutation(cookbook.users.schema.Mutation, cookbook.ingredients.schema.Mutation):
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()
