@@ -75,6 +75,7 @@ class CreateCategory(graphene.Mutation):
     @staticmethod
     def mutate(root, info, name):
         category = Category(name=name)
+        category.save()
         return CreateCategory(category=category)
 
 class CreateIngredient(graphene.Mutation):
@@ -92,6 +93,7 @@ class CreateIngredient(graphene.Mutation):
             notes=notes,
             category = Category.objects.get_or_create(name=category)[0]
         )
+        ingredient.save()
         return CreateIngredient(ingredient=ingredient)
 
 class Mutation(graphene.ObjectType):

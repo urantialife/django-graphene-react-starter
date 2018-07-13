@@ -4,7 +4,7 @@ Simple hackathon starter with Django, Graphene, React, and Ant Design. Back end 
 
 #### Rationale behind choice of technologies
 
-Well-documented, popular, easy to pick up, easy to find answers to questions. This project is intended to help more than hinder development. No fancy bells and whistles. The basics so you can focus on building.
+Well-documented (with the exception of Graphene...), popular, easy to pick up, easy to find answers to questions. This project is intended to help more than hinder development. No fancy bells and whistles. The basics so you can focus on building.
 
 #### Quick links
 
@@ -53,13 +53,21 @@ python manage.py migrate
 python manage.py loaddata ingredients
 ```
 
-6. Run it
+6. (optional) Run tests (located in `backend/ingredients/tests`)
+
+```
+python manage.py test
+```
+
+These tests are just to make sure everything works out of the box. If you make changes to the models/schema, you will need to edit or modify the tests accordingly. 
+
+7. Run it
 
 ```
 python manage.py runserver
 ```
 
-7. Go to `localhost:8000/graphql` and test sample queries (copied from tutorial pages). 
+8. Go to `localhost:8000/graphql` and test sample queries (copied from tutorial pages). 
 
 List all ingredients
 
@@ -133,7 +141,8 @@ mutation {
     createIngredient(
         name: "Milk",
         notes: "fat free",
-        category: "Dairy") {
+        category: "Dairy"
+    ) {
         ingredient {
             name
             notes
