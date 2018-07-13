@@ -68,7 +68,7 @@ query {
   allIngredients {
     edges {
       node {
-        id,
+        id
         name
       }
     }
@@ -118,7 +118,7 @@ query {
 Create a category
 ```
 mutation {
-    createCategory(input: {name: "My Category"}) {
+    createCategory(name: "My Category") {
         category {
             name
         }
@@ -130,11 +130,10 @@ Create an ingredient
 
 ```
 mutation {
-    createIngredient(input: {
+    createIngredient(
         name: "Milk",
         notes: "fat free",
-        category: "Dairy"
-    }) {
+        category: "Dairy") {
         ingredient {
             name
             notes
@@ -151,11 +150,11 @@ mutation {
 python manage.py startapp app_name
 ```
 
-1. Add your application to cookbook/local_settings.py
+1. Add your application to `backend/cookbook/settings.py`
 2. Create your models and add a schema.py file
 3. Add your models in `app_name/admin.py`
 3. Make migrations
-4. Import your app's Query, Mutation, etc. in `cookbook/schema.py` 
+4. Import your app's Query, Mutation, etc. in `backend/cookbook/schema.py` 
 
 See Django model field reference [here](https://docs.djangoproject.com/en/2.0/ref/models/fields/).
 
