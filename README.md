@@ -185,13 +185,10 @@ Django-filter is installed. You can read about filtering on the [Graphene docume
 *to do*
 [Documentation here](https://docs.djangoproject.com/en/2.0/ref/forms/validation/). On the [Graphene side](http://docs.graphene-python.org/projects/django/en/latest/form-mutations/).
 
-#### Tests
-*to do*
-
 ---
 
 ## Front end
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). A note on Ant Design: 
 
 #### How does the front end communicate with the back end?
 *to do* 
@@ -205,13 +202,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * `utils/` - for extra settings and configurations
 
 #### Getting started
-*to do*
-1. Install requirements
 
+1. Install requirements
 ```
 cd frontend
-npm install
+sudo npm install -g yarn
+yarn install
 ```
+
+2. Start application
+```
+yarn start
+```
+
+3. 
 
 #### How to add a component
 *to do*
