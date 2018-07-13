@@ -188,14 +188,12 @@ Django-filter is installed. You can read about filtering on the [Graphene docume
 ---
 
 ## Front end
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). A note on Ant Design: 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). A note on Ant Design: I chose Ant because it's well thought out, easy to use, and has good documentation. I was debating whether to include it because sometimes UI frameworks can be annoying and slow you down. But at the same time, I think, especially in a hackathon project, design is essential. You can have the best idea in the world but if it's not presented well, nothing matters.
 
 #### How does the front end communicate with the back end?
 *to do* 
 
 #### What goes where
-*to do*
-
 * `layouts/` - for page structure templates
 * `components/` - for components
 * `pages/` - for pages
@@ -203,7 +201,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### Getting started
 
-1. Install requirements
+1. Install requirements (npm comes installed with node.js, you need to have node installed already)
 ```
 cd frontend
 sudo npm install -g yarn
@@ -215,21 +213,49 @@ yarn install
 yarn start
 ```
 
-3. 
+3. Override global variables (like colors) in `frontend/config-overrides.js`
+
+#### How to add a dependency
+```
+yarn add nameofthingyouwanttoadd
+```
 
 #### How to add a component
-*to do*
+Add your component in `frontend/src/components`. Then import it in whatever file you want to use it in.
 
 #### Styling
-*to do*
-Need to explore what people favor... styled components? External Less/Sass? Plain CSS files?
+You can use styled components. Here's an example of how styled components work (note the backtick):
+
+```
+import styled from 'styled-components';
+...
+const Button = styled.button`
+  border-radius: 3px;
+  .nested-thing {
+    color: #FFFFFF;
+  }
+`;
+...
+<Button>This is my button</Button>
+```
+
+You can also just use inline styles. Example:
+```
+<p style={{color: 'red', fontFamily: 'Helvetica'}}>Hello. I am groot.</p>
+```
+
+And lastly you can import CSS files like this:
+
+```
+import './App.css';
+```
 
 ###### Typography
 *to do*
 This project uses [Typography.js](https://kyleamathews.github.io/typography.js/). You can find the config in `frontend/utils/typography.js`.
 
 ---
-
+*not anywhere close to done*
 ## Deploy
 
 Debug false, whitenoise, etc.
