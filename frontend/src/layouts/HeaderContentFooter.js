@@ -10,6 +10,7 @@ class HeaderContentFooter extends Component {
             <Menu
                 mode="horizontal"
                 theme="dark"
+                defaultSelectedKeys={['2']}
                 style={{lineHeight: '64px'}}
             >
                 <Menu.Item key="1">MyAppName</Menu.Item>
@@ -21,10 +22,10 @@ class HeaderContentFooter extends Component {
         <Content style={{
             padding: '5em',
         }}>
-        some kind of content
+            {this.props.children}
         </Content>
         <Footer>
-
+            Made by John Doe, Jane Doe, and Nancy Drew for SomeHackathon 2018
         </Footer>
       </Layout>
     );

@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <HeaderContentFooter>
-
+        <p>This is a child</p>
       </HeaderContentFooter>
     );
   }
