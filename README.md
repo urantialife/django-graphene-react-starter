@@ -4,7 +4,7 @@ Simple hackathon starter with Django, Graphene, React, and Ant Design. Back end 
 
 #### Rationale behind choice of technologies
 
-Well-documented (with the exception of Graphene...), popular, easy to pick up, easy to find answers to questions. This project is intended to help more than hinder development. No fancy bells and whistles. The basics so you can focus on building.
+Easy to pick up, easy to find answers to questions. This project is intended to help more than hinder development.
 
 #### Quick links
 
@@ -12,13 +12,13 @@ Well-documented (with the exception of Graphene...), popular, easy to pick up, e
 * [GraphQL?](https://www.howtographql.com/basics/0-introduction/)
 * Graphene is "a framework for building GraphQL APIs in Python."
 * [Here](https://reactjs.org/tutorial/tutorial.html) you can find an intro to React.
-* [Ant Design documentation](https://ant.design/docs/react/introduce)
+* [Ant Design documentation](https://ant.design/docs/react/introduce) <-- used mostly by Chinese companies like Alibaba
 
 ## Back end
 
 Follows the sample cookbook application on the Graphene/Django with Relay tutorial [here](http://docs.graphene-python.org/projects/django/en/latest/tutorial-relay/). Authentication set up is in `users/schema.py` and follows [this tutorial](https://www.howtographql.com/graphql-python/4-authentication/). While auth is included here, users are not tied to any models in the ingredients app. To get started:
 
-1. Create a virtualenv and activate (if you don't have virtualenv then run `pip install virtualenv`)
+1. Create a virtual environment and activate (if you don't have virtualenv then run `pip install virtualenv`)
 
 ```
 virtualenv env
@@ -88,7 +88,7 @@ Get an ingredient with a specific ID
 
 ```
 query {
-  ingredient(id: "SW5ncmVkaWVudE5vZGU6MQ==") {
+  ingredient(id: "SW5ncmVkaWVudFR5cGU6Mw==") {
     name
   }
 }
@@ -188,7 +188,7 @@ Django-filter is installed. You can read about filtering on the [Graphene docume
 ---
 
 ## Front end
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). A note on Ant Design: I chose Ant because it's well thought out, easy to use, and has good documentation. I was debating whether to include it because sometimes UI frameworks can be annoying and slow you down. But at the same time, I think, especially in a hackathon project, design is essential. You can have the best idea in the world but if it's not presented well, nothing matters.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 #### How does the front end communicate with the back end?
 *to do* 
@@ -239,7 +239,7 @@ const Button = styled.button`
 <Button>This is my button</Button>
 ```
 
-You can also just use inline styles. Example:
+You can also use inline styles. Example:
 ```
 <p style={{color: 'red', fontFamily: 'Helvetica'}}>Hello. I am groot.</p>
 ```
@@ -258,8 +258,11 @@ This project uses [Typography.js](https://kyleamathews.github.io/typography.js/)
 *not anywhere close to done*
 ## Deploy
 
+Oftentimes at the end of a hackathon people underestimate how long it can take to actually deploy a project for judges to see. I'm including a detailed list
+of instructions below to make the process smooth and simple, logging exactly what I did step by step to roll this out on AWS Elastic Beanstalk (since you usually get free AWS credits at hackathons).
+
 Debug false, whitenoise, etc.
 
-#### Heroku
+### Heroku
 
-#### AWS
+maybe including a section on Heroku deployment
