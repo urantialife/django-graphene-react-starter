@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
-const { Header, Content, Footer } = Layout;
+import { Link } from 'react-router-dom';
 
+const { Header, Content, Footer } = Layout;
 class HeaderContentFooter extends Component {
   render() {
     return (
@@ -14,9 +15,8 @@ class HeaderContentFooter extends Component {
                 style={{lineHeight: '64px'}}
             >
                 <Menu.Item key="1">MyAppName</Menu.Item>
-                <Menu.Item key="2">nav 1</Menu.Item>
-                <Menu.Item key="3">nav 2</Menu.Item>
-                <Menu.Item key="4">nav 3</Menu.Item>
+                <Menu.Item key="2"><Link to="/">Home</Link></Menu.Item>
+                <Menu.Item key="3"><Link to="/ingredients/">Ingredients</Link></Menu.Item>
             </Menu>
         </Header>
         <Content style={{

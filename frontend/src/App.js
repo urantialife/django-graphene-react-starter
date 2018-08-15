@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { 
   BrowserRouter as Router,
-  //Route,
-  Link
+  Route
 } from 'react-router-dom';
 import './App.css';
+import HomeView from './components/HomeView';
 import HeaderContentFooter from './layouts/HeaderContentFooter';
 
 class App extends Component {
@@ -13,14 +13,9 @@ class App extends Component {
       <Router>
         <div>
           <HeaderContentFooter>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/ingredients/">Ingredients</Link></li>
-          </ul>
-            <p>This is a child</p>
+            <Route exact path="/" component={HomeView} />
+            {/*<Route exact path="/ingredients/" component={IngredientsView} />*/}
           </HeaderContentFooter>
-          {/*<Route exact path="/" component={HomeView} />
-          <Route exact path="/ingredients/" component={IngredientsView} />*/}
           </div>
         </Router>
     );
